@@ -34,34 +34,6 @@ const AllUsers = () => {
   const totalPages = Math.ceil(usersWithStats.length / usersPerPage);
 
 
-// const makeAdmin = async (user) => {
-//   toast.promise(
-//     axiosSecure.patch(`/users/make-admin/${user._id}`),
-//     {
-//       loading: 'Updating role...',
-//       success: () => {
-//         refetch();
-//         return `${user.name} is now an Admin!`;
-//       },
-//       error: 'Failed to update role'
-//     }
-//   );
-// };
-
-// const makeDeliveryMan = async (user) => {
-//   toast.promise(
-//     axiosSecure.patch(`/users/make-deliveryman/${user._id}`),
-//     {
-//       loading: 'Updating role...',
-//       success: () => {
-//         refetch();
-//         return `${user.name} is now a Delivery Man!`;
-//       },
-//       error: 'Failed to update role'
-//     }
-//   );
-// };
-
   const handleChangeUserRole = async (user, userType) => {
     toast.promise(
       axiosSecure.patch(`/users/change-role/${user.email}`, { userType }),

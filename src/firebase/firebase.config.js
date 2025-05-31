@@ -15,3 +15,10 @@ const firebaseConfig = {
  const app = initializeApp(firebaseConfig);
 
  export const auth= getAuth();
+
+//  "rewrites": [
+//           {
+//             "source": "**",
+//             "destination": "/index.html"
+//           }
+//         ],

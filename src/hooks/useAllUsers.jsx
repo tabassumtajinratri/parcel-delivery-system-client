@@ -5,7 +5,7 @@ import useAxiosSecure from "../axiosInstance/useAxiosSecure";
 const useAllUsers = () => {
   const axiosSecure = useAxiosSecure();
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError ,refetch  } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axiosSecure.get("/users");
@@ -14,7 +14,7 @@ const useAllUsers = () => {
     },
   });
 
-  return { users: data || [], isLoading, isError };
+  return { users: data || [], isLoading, isError , refetch};
 };
 
 export default useAllUsers;
